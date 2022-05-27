@@ -1,0 +1,136 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'DM Sans', sans-serif;
+}
+
+.material-symbols-outlined {
+	font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48;
+}
+
+button {
+	border: none;
+	outline: none;
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	background-color: rgb(255, 253, 234);
+	border: 2px solid black;
+	border-radius: 0px;
+	padding-top: 3px;
+	transition: all 0.2s ease;
+}
+
+button:hover {
+	transform: scale(1.1);
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.game {
+	display: flex;
+	flex-direction: column;
+	background: url('./img/bg.svg') center/cover;
+	width: 960px;
+	height: 540px;
+}
+
+.game__header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.game__field {
+	width: 100%;
+	height: 100%;
+	margin-top: 25px;
+	position: relative;
+	overflow: hidden;
+}
+
+.game__button {
+	margin-top: 30px;
+}
+
+.game__timer {
+	width: 140px;
+	padding: 5px;
+	border: 2px solid black;
+	font-size: 28px;
+	text-align: center;
+	background-color: #fff;
+	margin-top: 10px;
+	visibility: hidden;
+}
+
+.game__score {
+	width: 60px;
+	height: 60px;
+	background-color: rgb(0, 0, 0);
+	border-radius: 50%;
+	font-size: 36px;
+	color: #fff;
+	text-align: center;
+	padding-top: 7px;
+	margin-top: 7px;
+	visibility: hidden;
+}
+
+.pop-up {
+	display: block;
+	background-color: rgba(0, 0, 0, 0.7);
+
+	width: 400px;
+	height: 160px;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+	position: absolute;
+	transform: translateY(60%);
+}
+
+.pop-up--hide {
+	display: none;
+}
+
+.pop-up__message {
+	color: #fff;
+	font-size: 28px;
+	margin-top: 10px;
+}
+
+.game__field > img {
+	width: 70px;
+	height: 70px;
+}
+
+.trash {
+	animation: trash-move 1.5s infinite alternate cubic-bezier(0.46, 0.18, 0.66, 0.93);
+}
+
+@keyframes trash-move {
+	to {
+		transform: translateY(15px);
+	}
+}
+
+.fish {
+	margin-left: 0;
+	transition: margin-left 3s ease-in-out;
+}
+
+.back {
+	transform: scaleX(-1);
+	filter: FlipH;
+}
